@@ -7,7 +7,7 @@ const agent = await Agent.create({
   local: { cwd: process.cwd() },
 })
 
-const prompt = "Explain this project in one paragraph."
+const prompt = "請用繁體中文說明這個專案的用途、主要資料夾和執行方法。只閱讀檔案，不要修改任何檔案."
 const run = await agent.send(prompt)
 
 for await (const event of run.stream()) {
